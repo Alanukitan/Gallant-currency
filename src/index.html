@@ -7,19 +7,32 @@
     <link rel="stylesheet" href="output.css" />
   </head>
   <body class="">
-    <nav class="shadow-md" style="background-color: #163816">
+    <nav class="shadow-md flex items-center justify-between " style="background-color: #163816">
       <div class="flex items-center gap-3 my-2 mx-4 py-4">
         <img src="./images/exchange-rate.png" class="h-10 w-10" />
         <div class="text-2xl font-bold text-gray-300">GALLANT</div>
       </div>
+      <button
+            id="menu-btn"
+            class=" px-4 md:hidden text-gray-600 focus:outline-none"
+          >
+            <img src="./images/menu.png" class="w-8 h-8" alt="" />
+          </button>
+          <div class="hidden mx-5 md:block">
+            <ul class="flex gap-9 mx-5 text-gray-300">
+              <li class="text-lg ">Home</li>
+              <li class="text-lg">Link</li>
+              <li class="text-lg">Currency Converter</li>
+            </ul>
+          </div>
     </nav>
-    <section class="px-4 mx-4 mt-14">
+    <section class="px-4 mx-4 mt-14 lg:ml-10 justify-between">
       <div class="justify-center items-center gap-6 lg:flex flex-row-reverse">
         <div class="">
           <img
             src="./images/SL-0212121-40670-43.jpg"
             alt=""
-            class="md:max-w-2xl lg:max-w-3xl"
+            class="md:max-w-2xl lg:max-w-xl"
           />
         </div>
         <div
@@ -39,6 +52,10 @@
       >
         Currency Converter
       </p>
+      <div
+            id="resultArea"
+            class=" mt-6 bg-gray-300 p-4 rounded-lg text-green-300 text-center font-bold mb-2"
+          ></div>
       <div class="flex items-center justify-center p-4">
         <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
           <h2 class="text-xl font-semibold mb-4 text-gray-800">Amount:</h2>
@@ -50,13 +67,14 @@
               class="w-full p-3 border-b-2 border-gray-300 focus:outline-none focus:border-purple-500 text-lg"
             />
           </div>
-          <div class="flex space-x-4 mb-8">
+          <div class="flex space-x-4 mb-8 my-10">
             <div class="flex-1">
               <select
                 id="fromCurrency"
-                class="w-full bg-green-700 text-white font-bold p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer"
+                class="w-full bg-green-700 text-white text-sm p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer lg:font-bold"
               >
-                <option value="Naira">Naira (₦)</option>
+                
+                <option value="NGN">NGN (₦)</option>
                 <option value="USD">USD ($)</option>
                 <option value="EUR">EUR (€)</option>
                 <option value="GBP">GBP (£)</option>
@@ -81,8 +99,8 @@
 
             <div class="flex-1">
               <select
-                id="fromCurrency"
-                class="w-full bg-green-700 text-white font-bold p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer"
+                id="toCurrency"
+                class="w-full bg-green-700 text-white  p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 cursor-pointer lg:font-bold"
               >
                 <option value="USD">USD ($)</option>
                 <option value="NGN">NGN (₦)</option>
@@ -110,19 +128,15 @@
           <!---->
           <button
             id="convertButton"
-            class="w-full bg-green-950 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md transition duration-200 ease-in-out cursor-pointer"
+            class="w-full bg-green-950 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md transition duration-200 ease-in-out cursor-pointer mb-8"
           >
             Convert
           </button>
-          <!---->
-          <div
-            id="resultArea"
-            class="mt-6 bg-gray-300 p-4 rounded-lg text-green-300 text-center font-bold mb-10"
-          ></div>
+          
+        
         </div>
       </div>
     </section>
     <script src="./script.js"></script>
   </body>
-
 </html>
